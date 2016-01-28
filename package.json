@@ -1,0 +1,25 @@
+{
+  "name": "youzan-sdk",
+  "version": "0.0.1",
+  "description": "Node.js SDK for https://open.youzan.com ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayqian/youzan-sdk.git"
+  },
+  "keywords": [
+    "koudaitong",
+    "youzan",
+    "sdk",
+    "youzan-sdk"
+  ],
+  "author": "Ray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rayqian/youzan-sdk/issues"
+  },
+  "homepage": "https://github.com/rayqian/youzan-sdk#readme"
+}
