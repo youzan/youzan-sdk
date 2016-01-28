@@ -46,5 +46,4 @@ $ npm install youzan-sdk
 
 ## Contact
 
-微信扫一扫
-![二维码](/weixin.jpg)
+<img src="/weixin.jpg" alt="二维码" width="200" height="auto" />
