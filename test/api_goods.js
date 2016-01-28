@@ -19,7 +19,7 @@ describe('api goods test', function() {
     });
 
     describe('kdt.items.update', function() {
-        it('should update goods', function(done) {
+        it('should update goods', function() {
             return sdk.post('kdt.items.update', {
                 num_iid: 210214637,
                 title: 'Node.js update test'
