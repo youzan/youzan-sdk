@@ -43,3 +43,8 @@ $ npm install youzan-sdk
 ## Troubleshooting
 
 1. 除了获取信息等操作使用get方法，其他默认都是POST，没有DELETE之类的方法
+
+## Contact
+
+微信扫一扫
+![二维码](/weixin.jpg)
