@@ -21,15 +21,7 @@ Protocol.sign = function(appSecret, params, method) {
         }
     }
 
-    arr = arr.sort(function(a, b) {
-        if (a[0] > b[0]) {
-            return 1;
-        }
-        if (a[0] < b[0]) {
-            return -1;
-        }
-        return 0;
-    });
+    arr = arr.sort();
 
     return Protocol.hash(method, appSecret + arr.join('') + appSecret);
 };

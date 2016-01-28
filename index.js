@@ -1,10 +1,8 @@
-var co = require('co');
 var request = require('request');
 var url = require('url');
+var fs = require('fs');
 
 var Protocol = require('./src/protocol');
-
-// SDK({}).get('method', {}).then(() => {});
 
 function SDK(config) {
     if (!(this instanceof SDK)) {
@@ -39,29 +37,28 @@ SDK.prototype.get = function(method, params) {
     obj.query = this._buildRequestParams(method, params);
 
     var requestURL = url.format(obj);
-    return co(function *() {
-        return yield new Promise(function (resolve, reject) {
-            request({
-                url: requestURL,
-                method: 'GET'
-            }, _this._parseResponse(resolve, reject));
-        });
+    return new Promise(function (resolve, reject) {
+        request({
+            url: requestURL,
+            method: 'GET'
+        }, _this._parseResponse(resolve, reject));
     });
 };
 
 SDK.prototype.post = function(method, params, files) {
     var _this = this;
 
-    var form = this._buildRequestParams(method, params);
+    var data = this._buildRequestParams(method, params);
+    if (files) {
+        data = this._addFiles(data, files);
+    }
 
-    return co(function *() {
-        return yield new Promise(function (resolve, reject) {
-            request({
-                url: SDK.apiEntry,
-                method: 'POST',
-                form: form
-            }, _this._parseResponse(resolve, reject));
-        });
+    return new Promise(function (resolve, reject) {
+        request({
+            url: SDK.apiEntry,
+            method: 'POST',
+            formData: data
+        }, _this._parseResponse(resolve, reject));
     });
 };
 
@@ -71,7 +68,7 @@ SDK.prototype._parseResponse = function(resolve, reject) {
             var json = JSON.parse(body);
 
             if (json.error_response) {
-                reject(json);
+                reject(body);
             } else {
                 resolve(json);
             }
@@ -79,6 +76,27 @@ SDK.prototype._parseResponse = function(resolve, reject) {
             reject(error || body);
         }
     };
+};
+
+SDK.prototype._addFiles = function(params, files) {
+    for (var key in files) {
+        if (files.hasOwnProperty(key)) {
+            if (params[key]) {
+                throw new Error('request parameter has a key name same with filename: ', key);
+            }
+
+            var file = files[key];
+            var tempArr = [];
+            if (!Array.isArray(file)) {
+                file = [file];
+            }
+            for (var i = 0; i < file.length; i++) {
+                tempArr.push(fs.createReadStream(file[i]));
+            }
+            params[key] = tempArr;
+        }
+    }
+    return params;
 };
 
 SDK.prototype._buildRequestParams = function(method, params) {
@@ -90,6 +108,7 @@ SDK.prototype._buildRequestParams = function(method, params) {
             if (commonParams[key]) {
                 throw new Error('request parameter key name conflicted with common parameter key name');
             }
+
             commonParams[key] = params[key];
         }
     }
@@ -114,15 +133,22 @@ SDK.prototype._getCommonParams = function(method) {
 };
 
 SDK.prototype._getDate = function() {
-    var date = new Date();
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1;
-    var day = date.getDate();
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
+    var time = new Date();
+    function format(str) {
+        return str.toString().length === 1 ? '0' + str : str;
+    }
+    var month = time.getMonth() + 1;
+    month = format(month);
+    var day = time.getDate();
+    day = format(day);
+    var hour = time.getHours();
+    hour = format(hour);
+    var min = time.getMinutes();
+    min = format(min);
+    var sec = time.getSeconds();
+    sec = format(sec);
 
-    return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    return time.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec;
 };
 
 module.exports = SDK;
