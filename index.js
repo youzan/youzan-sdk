@@ -93,6 +93,9 @@ SDK.prototype._addFiles = function(params, files) {
             for (var i = 0; i < file.length; i++) {
                 tempArr.push(fs.createReadStream(file[i]));
             }
+            if (key.indexOf('[]') < 0) {
+                key += '[]';
+            }
             params[key] = tempArr;
         }
     }
