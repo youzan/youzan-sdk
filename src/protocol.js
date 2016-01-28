@@ -1,7 +1,5 @@
 var crypto = require('crypto');
 
-module.exports = Protocol;
-
 var Protocol = {
     APP_ID_KEY: 'app_id',
     METHOD_KEY: 'method',
@@ -40,7 +38,7 @@ Protocol.hash = function(method, str) {
     if (method === 'md5') {
         var md5 = crypto.createHash('md5');
         md5.update(str);
-        return md5.digest('hex');
+        return md5.digest('hex').toLowerCase();
     } else {
         throw new Error('Not support hash method: ' + method);
     }
@@ -53,3 +51,5 @@ Protocol.allowedSignMethods = function() {
 Protocol.allowedFormat = function() {
     return ['json'];
 };
+
+module.exports = Protocol;
