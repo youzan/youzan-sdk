@@ -14,12 +14,18 @@
     "koudaitong",
     "youzan",
     "sdk",
-    "youzan-sdk"
+    "youzan-sdk",
+    "有赞",
+    "口袋通"
   ],
   "author": "Ray",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rayqian/youzan-sdk/issues"
   },
-  "homepage": "https://github.com/rayqian/youzan-sdk#readme"
+  "homepage": "https://github.com/rayqian/youzan-sdk#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "request": "^2.69.0"
+  }
 }
