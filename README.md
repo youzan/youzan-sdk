@@ -1,6 +1,6 @@
-# 有赞开放平台 Node.js SDK
+# 有赞开放平台官方 Node.js SDK
 
-Promisify Node.js SDK for http://open.youzan.com
+Official Node.js SDK for http://open.youzan.com
 
 ## Examples
 
