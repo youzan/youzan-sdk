@@ -29,6 +29,20 @@ describe('api goods test', function() {
         });
     });
 
+    describe('kdt.users.weixin.follower.tags.add', function() {
+        it('should update tags', function(done) {
+            return sdk.post('kdt.users.weixin.follower.tags.add', {
+                tags: ['阿道夫'],
+                user_id: 1049187766
+            }).then(function(data) {
+                console.log(data);
+                done();
+            }, function(err) {
+                done(new Error(err));
+            });
+        });
+    });
+
     describe('kdt.items.add', function() {
         it('should create goods successfully', function(done) {
             return sdk.post('kdt.item.add', {

@@ -29,7 +29,7 @@ Protocol.sign = function(appSecret, params, method) {
 Protocol.hash = function(method, str) {
     if (method === 'md5') {
         var md5 = crypto.createHash('md5');
-        md5.update(str);
+        md5.update(str, 'utf8');
         return md5.digest('hex').toLowerCase();
     } else {
         throw new Error('Not support hash method: ' + method);
