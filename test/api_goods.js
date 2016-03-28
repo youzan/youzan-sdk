@@ -1,5 +1,11 @@
 var assert = require('assert');
 var SDK = require('../index');
+// 请添加你自己的key 和 secret
+// module.exports = {
+//    key: '',
+//    secret: ''
+//};
+
 var config = require('./config');
 
 describe('api goods test', function() {
@@ -47,11 +53,11 @@ describe('api goods test', function() {
         it('should create goods successfully', function(done) {
             return sdk.post('kdt.item.add', {
                 price: 100,
-                title: 'Node.js sdk test',
+                title: 'Node.js sdk test by Ray',
                 is_virtual: 0,
                 post_fee: 10.00
             }, {
-                images: [__dirname + '/test.jpg', __dirname + '/test.jpg']
+                images: [__dirname + '/tmp0.jpg', __dirname + '/1.jpg']
             }).then(function(data) {
                 if (data) {
                     console.log(data);
