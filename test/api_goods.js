@@ -51,7 +51,7 @@ describe('api goods test', function() {
                 is_virtual: 0,
                 post_fee: 10.00
             }, {
-                images: [__dirname + '/test.jpg']
+                images: [__dirname + '/test.jpg', __dirname + '/test.jpg']
             }).then(function(data) {
                 if (data) {
                     console.log(data);
