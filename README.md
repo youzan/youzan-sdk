@@ -33,7 +33,7 @@ sdk.post('kdt.item.add', {
 ## Installation
 
 ```
-$ npm install youzan-sdk
+$ npm install youzan-sdk --save
 ```
 
 ## Youzan API
