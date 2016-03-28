@@ -43,4 +43,4 @@ $ npm install youzan-sdk --save
 ## Troubleshooting
 
 1. 除了获取信息等操作使用get方法，其他默认都是POST，没有DELETE之类的方法
-2. 这是一个简易的SDK，如果觉得不爽，可以自己封装一个，当然欢迎 pull request 以及提 issues
+2. 这是一个简易的SDK，如果觉得不好用，可以 Fork；当然欢迎 pull request 以及提 issues
