@@ -1,7 +1,7 @@
 {
   "name": "youzan-sdk",
-  "version": "0.0.6",
-  "description": "Official Node.js SDK for http://open.youzan.com 有赞开放平台官方 Node.js SDK",
+  "version": "0.0.7",
+  "description": "Yet Another Node.js SDK for http://open.youzan.com 有赞开放平台官方 Node.js SDK",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
