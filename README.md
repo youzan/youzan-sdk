@@ -1,7 +1,9 @@
-# Yet Another Node.js SDK for http://open.youzan.com
+# 有赞开放平台 Node.js SDK
 
 [![NPM version][npm-image]][npm-url]
 [![Downloads][downloads-image]][downloads-url]
+
+Yet Another Node.js SDK for http://open.youzan.com
 
 ## Examples
 
