@@ -1,6 +1,6 @@
 {
     "name": "youzan-sdk",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "Yet Another Node.js SDK for http://open.youzan.com",
     "main": "index.js",
     "scripts": {
