@@ -1,6 +1,7 @@
 # 有赞开放平台 Node.js SDK
 
 [![NPM version][npm-image]][npm-url]
+[![Build status][travis-image]][travis-url]
 [![Downloads][downloads-image]][downloads-url]
 
 Yet Another Node.js SDK for http://open.youzan.com
@@ -51,5 +52,7 @@ $ npm install youzan-sdk --save
 
 [npm-image]: https://img.shields.io/npm/v/youzan-sdk.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/youzan-sdk
+[travis-image]: https://img.shields.io/travis/rayqian/youzan-sdk.svg?style=flat-square
+[travis-url]: https://travis-ci.org/rayqian/youzan-sdk
 [downloads-image]: http://img.shields.io/npm/dm/youzan-sdk.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/youzan-sdk
