@@ -1,5 +1,8 @@
 # 有赞开放平台 Node.js SDK
 
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][downloads-url]
+
 Yet Another Node.js SDK for http://open.youzan.com
 
 ## Examples
@@ -44,3 +47,9 @@ $ npm install youzan-sdk --save
 
 1. 除了获取信息等操作使用get方法，其他默认都是POST，没有DELETE之类的方法
 2. 这是一个简易的SDK，如果觉得不好用，可以 Fork；当然欢迎 pull request 以及提 issues
+
+
+[npm-image]: https://img.shields.io/npm/v/youzan-sdk.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/youzan-sdk
+[downloads-image]: http://img.shields.io/npm/dm/youzan-sdk.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/youzan-sdk
