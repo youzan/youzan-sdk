@@ -3,9 +3,6 @@ logs
 *.log
 npm-debug.log*
 
-#app key and secret config file
-test/config.js
-
 # Runtime data
 pids
 *.pid
