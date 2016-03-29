@@ -32,7 +32,7 @@ test('kdt.item.add', () => {
     });
 });
 
-test('kdt.users.weixin.follower.tags.add', () => {
+test.skip('kdt.users.weixin.follower.tags.add', () => {
     return sdk.post('kdt.users.weixin.follower.tags.add', {
         tags: ['阿道夫'],
         user_id: 1049187766
