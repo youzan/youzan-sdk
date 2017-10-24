@@ -42,7 +42,7 @@ $ npm install youzan-sdk --save
 
 ## Youzan API
 
-[有赞开放平台接口列表](http://open.youzan.com/api)
+[有赞开放平台接口列表](https://www.youzanyun.com/apilist)
 
 ## Troubleshooting
 
